@@ -1,0 +1,165 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{caption}
+\title{Exercisesheet No.1}
+\author{Alexander Diete \and Magnus M\"uller \and Martin Pfannem\"uller}
+
+\begin{document}
+\maketitle
+\section*{Exercise 1}
+\textbf{This part needs to be double checked!}
+The agent is rational because it ends in a finite state. At most the agent uses three operations to behave correctly. To prove the rationality in this simple case it is possible to enumerate all possible outcomes of the world:
+
+\begin{itemize}
+  \item Case: both squares are dirty
+  \begin{itemize}
+    \item Robot starts left: \textit{clean, right, clean}
+    \item Robot starts right: \textit{clean, left, clean} 
+  \end{itemize}
+  \item Case: left square is dirty
+  \begin{itemize}
+    \item Robot starts left: \textit{clean, right}
+    \item Robot starts right: \textit{left, clean} 
+  \end{itemize}
+  \item Case: right square is dirty
+  \begin{itemize}
+    \item Robot starts left: \textit{right, clean}
+    \item Robot starts right: \textit{clean, left} 
+  \end{itemize}
+  \item Case: no square is dirty
+  \begin{itemize}
+    \item Robot starts left: \textit{right}
+    \item Robot starts right: \textit{left} 
+  \end{itemize}
+\end{itemize}
+
+\noindent
+It is easy to see that the agent always acts correctly therefore we can sufficiently say the agent is rational. 
+
+\newpage
+
+\section*{Exercise 2}
+
+\newpage
+
+\section*{Exercise 3}
+
+\newpage
+\section*{Exercise 4}
+\textbf{This part needs to be double checked!}
+\subsection*{a)}
+\begin{quotation}\noindent
+\textit{There exists task environment in which no pure reflex agent can behave rationally.}
+\end{quotation}
+\noindent
+This statement is \textbf{true}. We consider for instance the vacuum-cleaner example with an environment that is not fully observable and also consists of obstacles and other traps. A reflex based agent is not able to act rationally wihtout having some sort of state.
+
+\subsection*{b)}
+\begin{quotation}\noindent
+\textit{There exists task environment in which every agent is rational.}
+\end{quotation}
+\noindent
+This statement is \textbf{false}. For every environment an agent is able to behave the exact opposite of what it is supposed to do.
+
+\subsection*{c)}
+\begin{quotation}\noindent
+\textit{The input to an agent function is the same as the input to the agent problem.}
+\end{quotation}
+\noindent
+This statement is \textbf{false}. The agent function may be working on a partially solved problem and may be called multiple times in the program. The input of the agent problem on the other hand is the starting point of the agent.
+
+\subsection*{d)}
+\begin{quotation}\noindent
+\textit{There can be more than one agent program that implements a given agent function.}
+\end{quotation}
+\noindent
+This statement is \textbf{true}. Dunno why
+
+\subsection*{e)}
+\begin{quotation}\noindent
+\textit{An agent that senses only partial information about the state cannot be prefectly rational.}
+\end{quotation}
+\noindent
+This statement is \textbf{false}. 
+
+\newpage
+
+\section*{Exercise 5}
+We cann simply solve this exercise by using truth tables and counting the positive Results. It is important to note, that if a Variable is not mentioned in the preposition, its value is not important for the model and can be either \textbf{true} or \textbf{false}.
+
+\subsection*{a)} 
+$(A \wedge B) \vee (B \wedge C)$
+\begin{table}[h]
+  \begin{tabular}{c|c|c||c}
+    A & B & C & Result\\
+    \hline
+    0 & 0 & 0 & 0 \\
+    1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 \\
+    1 & 1 & 0 & 1 \\
+    0 & 0 & 1 & 0 \\
+    1 & 0 & 1 & 0 \\
+    0 & 1 & 1 & 1 \\
+    1 & 1 & 1 & 1
+  \end{tabular}
+  \caption*{We thus have 3 positive outcomes in the truth-table. As D is not considered in the propositions, its value is not important and can be either true or false. This doubles the result-size to \textbf{6 possible models}.}
+\end{table}
+
+\subsection*{b)} 
+$A \vee B$
+\begin{table}[h]
+  \begin{tabular}{c|c||c}
+    A & B & Result\\
+    \hline
+    0 & 0 & 0 \\
+    1 & 0 & 1 \\
+    0 & 1 & 1 \\
+    1 & 1 & 1 
+  \end{tabular}
+  \caption*{This preposotion also has three positive outcomes but in contrast to \textit{a)} both C and D and not bound in the formula. Therefore any combination of assingment of C and D is valid. This results in $3 \cdot 2^2 = \textbf{12}$ \textbf{possible models}}
+\end{table}
+
+\newpage
+
+\subsection*{c)} 
+$A \Leftrightarrow  B \Leftrightarrow  C$
+\begin{table}[h]
+  \begin{tabular}{c|c|c||c}
+    A & B & C & Result\\
+    \hline
+    0 & 0 & 0 & 1 \\
+    1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 \\
+    1 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    1 & 0 & 1 & 0 \\
+    0 & 1 & 1 & 0 \\
+    1 & 1 & 1 & 1
+  \end{tabular}
+  \caption*{The results are similar to \textit{a)} as D is unbound. This results in $2 \cdot 2 = \textbf{4}$ \textbf{possible models}.}
+\end{table}
+
+\subsection*{d)} 
+$A \wedge  B \wedge \neg D$
+\begin{table}[h]
+  \begin{tabular}{c|c|c||c}
+    A & B & D & Result\\
+    \hline
+    0 & 0 & 0 & 0 \\
+    1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 \\
+    1 & 1 & 0 & 1 \\
+    0 & 0 & 1 & 0 \\
+    1 & 0 & 1 & 0 \\
+    0 & 1 & 1 & 0 \\
+    1 & 1 & 1 & 0
+  \end{tabular}
+  \caption*{The results are similar to \textit{a)} or \textit{c)}. But in this case C is unbound. This results in $1 \cdot 2 = \textbf{2}$ \textbf{possible models}.}
+\end{table}
+
+\newpage
+\section*{Exercise 6}
+\subsection*{a)}
+
+\end{document}
+
