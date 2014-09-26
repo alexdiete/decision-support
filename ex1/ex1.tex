@@ -1,13 +1,19 @@
 \documentclass[11pt]{article}
 \usepackage{amsmath}
 \usepackage{caption}
+
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+\usepackage{graphicx}
+
 \title{Exercisesheet No.1}
 \author{Alexander Diete \and Magnus M\"uller \and Martin Pfannem\"uller}
 
 \begin{document}
 \maketitle
 \section*{Exercise 1}
-\textbf{This part needs to be double checked!}
 The agent is rational because it ends in a finite state. At most the agent uses three operations to behave correctly. To prove the rationality in this simple case it is possible to enumerate all possible outcomes of the world:
 
 \begin{itemize}
@@ -34,19 +40,53 @@ The agent is rational because it ends in a finite state. At most the agent uses 
 \end{itemize}
 
 \noindent
-By definition a rational agent is supposed to maximize its performance measure. It is easy to see that the agent always acts correctly. Thus, it maximizes it's performance and therefore we can sufficiently say the agent is rational. 
+By definition a rational agent is supposed to maximize its performance measure. It is easy to see that the agent always acts correctly. Thus, it maximizes it's performance and there is no agent that can do better. Therefore we can sufficiently say the agent is rational. 
 
 \newpage
 
 \section*{Exercise 2}
+\subsection*{a)}
+No it is not a rational agent as it doesn't stop once every square is cleaned. Instead it keeps moving, thus earning penalty points by every move it takes.
+
+\subsection*{b)}
+The cleaner stops once it visited all squares as it has a map of the squares. As there is no cleaner that performs better under this environment it is a rational cleaner. (The only assumption is that there exists no cleaner that knows the distribution of the dirty squares a priori)
+ 
+\subsection*{c)}
+the agent knows the state of the environment then the agent knows exactly what to do next. For the agent there is a mapping of actions to each of the eight states. Thus this simple reflex agent is rational in this environment.
+As the model-based agent/ reflex agent with state is a more sophisticated agent than the simple reflex agent it is rational as well.
+
 
 \newpage
 
 \section*{Exercise 3}
+\subsection*{a)}
+No, the simple reflex agent will be trapped in a corner forever once it hits a wall.
 
+\subsection*{b)}
+Yes, the randomized agent can outperform the simple reflex agent.
+The agent function could look like this: \\
+\textbf{function} randomizedAgentFunction (percept) \textbf{returns} an action
+\begin{algorithmic}
+\If {$dirty$}
+    \State return $clean$
+\Else
+    \State return $randomDirection$
+\EndIf
+\end{algorithmic}
+Eventually the agent using this function will clean all dirty squares.
+
+\subsection*{c)}
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.3\textwidth]{environment}
+	\caption{Hard environment}
+	\label{fig:environment}
+\end{figure}
+
+\noindent The randomized agent will perform poor in environments with many corners and small paths or in general environments with many edges where you can not go.
 \newpage
 \section*{Exercise 4}
-\textbf{This part needs to be double checked!}
 \subsection*{a)}
 \begin{quotation}\noindent
 \textit{There exists task environment in which no pure reflex agent can behave rationally.}
@@ -80,7 +120,6 @@ This statement is \textbf{true}. The agent function is a formal description mapp
 \textit{An agent that senses only partial information about the state cannot be perfectly rational.}
 \end{quotation}
 \noindent
-\textbf{Got also an example we could add}
 This statement is \textbf{false}. Missing (sensorial) information can e.g. be compensated by saving an internal state. This means, although an agent cannot sense every information needed, it can act rationally.
 
 \newpage
@@ -161,6 +200,50 @@ $A \wedge  B \wedge \neg D$
 \newpage
 \section*{Exercise 6}
 \subsection*{a)}
+If $\alpha$ is valid, then it is true. Therefore true always is a subset of/entails $\alpha$ (see definition).
 
+\subsection*{b)}
+If $\alpha$ is false, then false $\models$ false which is obviously true
+If $\alpha$ is true, then false $\models$ true which is true as well
+Thus the assertion is true.
+
+\subsection*{c)}
+\begin{table}[h]
+  \begin{tabular}{c|c||c|c}
+    $\alpha$ & $\beta$ & $\neg \alpha \vee \beta$ & $\alpha \subseteq \beta$\\
+    \hline
+    0 & 0 & 1 & 1\\
+    0 & 1 & 1 & 1\\
+    1 & 0 & 0 & 0\\
+    1 & 1 & 1 & 1\\
+  \end{tabular}
+  \caption*{It follows from the table that the assertion is true.}
+\end{table}
+
+\subsection*{d)}
+\begin{table}[h]
+  \begin{tabular}{c|c||c|c}
+    $\alpha$ & $\beta$ & $\alpha \Leftrightarrow \beta$ & $\alpha \equiv \beta$\\
+    \hline
+    0 & 0 & 1 & 1\\
+    0 & 1 & 0 & 0\\
+    1 & 0 & 0 & 0\\
+    1 & 1 & 1 & 1\\
+  \end{tabular}
+  \caption*{It follows from the table that the assertion is true.}
+\end{table}
+
+\subsection*{e)}
+\begin{table}[h]
+  \begin{tabular}{c|c||c|c|c}
+    $\alpha$ & $\beta$ & $\alpha \wedge \neg \beta$ & $\neg \alpha \vee \beta$ & $\alpha \models \beta$\\
+    \hline
+    0 & 0 & 0 & 1 & 1\\
+    0 & 1 & 0 & 1 & 1\\
+    1 & 0 & 1 & 0 & 0\\
+    1 & 1 & 0 & 1 & 1\\
+  \end{tabular}
+  \caption*{It follows from the table that the assertion is true.}
+\end{table}
 \end{document}
 
