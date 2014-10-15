@@ -1,7 +1,19 @@
 \documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{caption}
+
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+\usepackage{graphicx}
 \usepackage{listings}
 
+\title{Exercisesheet No.1}
+\author{Alexander Diete \and Magnus M\"uller \and Martin Pfannem\"uller}
+
 \begin{document}
+\maketitle
 \section*{Ex.1}
 $$(((P \vee Q) \Rightarrow R) \wedge (R \vee (P \wedge \neg Q))) \wedge \neg R$$
 Translate the implication to an or-clause:
@@ -15,6 +27,9 @@ $$R \wedge \neg R$$
 We are ending up with a contradiction.
 
 \section*{Ex.2}
+
+$\displaystyle Init(Room(Room1) \wedge Room(Room2) \wedge Room(Room3) \wedge Room(Room4) \wedge Switch(s1) \wedge Switch(s2) \wedge Switch(s3) \wedge Switch(s4) \wedge Box(b1) \wedge Box(b2) \wedge Box(b3) \wedge Box(b4) \wedge At(Shakey,Floor) \wedge In(Shakey,Room3) \wedge TurnedOn(s4) \wedge TurnedOff(s3) \wedge TurnedOff(s2) \wedge TurnedOn(s1) \wedge In(b1,Room1) \wedge In(b2,Room1) \wedge In(b3,Room1) \wedge In(b4,Room1) \wedge At(b1,a) \wedge At(b2,b) \wedge At(b3,c) \wedge At(b4,d) \wedge At(Shakey,e))$
+
 \begin{lstlisting}[mathescape=true]
 Action(Go(x,y,r)),
   PRECOND: $At(Shakey, x) \wedge In(x,r) \wedge In(y,r)$
@@ -32,5 +47,15 @@ Action(ClimbDown(b,x)),
   PRECOND: $In(x,r) \wedge In(b,r) \wedge \neg At(b,x) \wedge On(Shakey, b)$
   EFFECT: $\neg On(Shakey, Floor) \wedge On(Shakey, b) \neg At(Shakey, x)$
   
+Action(TurnOn(s,b)),
+  PRECOND: $On(Shakey,b) \wedge \neg On(Shakey,Floot) \wedge At(b,s) \wedge At(Shakey, s)$
+  EFFECT: $TurnedOn(s)$
+
+Action(TurnOff(s,b)),
+  PRECOND: $On(Shakey,b) \wedge \neg On(Shakey,Floot) \wedge At(b,s) \wedge At(Shakey, s)$
+  EFFECT: $TurnedOff(s)$
+
+Plan:
+
 \end{lstlisting}
 \end{document}
