@@ -20,10 +20,13 @@ Translate the implication to an or-clause:
 $$((\neg(P \vee Q) \vee R) \wedge (R \vee (P \wedge \neg Q))) \neg R$$
 De Morgan:
 $$(((\neg P \wedge \neg Q) \vee R) \wedge (R \vee (P \wedge \neg Q))) \wedge \neg R$$
-Remove contradicting statements ($(\neg P \wedge \neg Q)$ and $(P \wedge \neg Q)$ can never be true at the same time)):
-$$(R \wedge R) \wedge \neg R$$
-A literal AND the same literal is the same as just writing the literal:
+Distributivity:
+$$((\neg P \vee R) \wedge (\neg Q \vee R) \wedge (R \vee P) \wedge (R \vee \neg Q))\wedge \neg R$$
+Distributivity (inverse):
+$$(R \vee (\neg P \wedge \neg Q \wedge P \wedge \neg Q))\wedge \neg R$$
+Complements over P ($(\neg P \wedge \neg Q \wedge P \wedge \neg Q) = $false):
 $$R \wedge \neg R$$
+
 We are ending up with a contradiction.
 
 \section*{Ex.2}
