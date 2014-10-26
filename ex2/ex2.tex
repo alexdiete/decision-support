@@ -166,7 +166,7 @@ b)
 \section*{Ex.7}
 
 In order so to solve this exercise we have to first transform the PDDL in a Form, that can be processed by a SATPlaner. This is described in the Artificial Intelligence Book, Chapter 10.4.1.
-Hence we transform goal and initial state, the successor state axiom, precondition and actions exclusion axioms.
+Hence we transform goal and initial state, the successor state axiom, precondition and actions exclusion axioms into propositional logic. 
 \newline
 
 \textbf{Init:}
@@ -202,7 +202,7 @@ InsertSim^{t} \Rightarrow \neg (RemoveCap^{t} \vee PutOnCap^{t})
 \newpage
 
 \noindent
-These rules have to be converted to CNF in order to be processable by a SATPlaner. As the goal and initial state already fulfill that form, they do not have to be transformed.\newline\newline
+These rules have to be converted to CNF in order to be processable by a SATPlaner. As the goal and initial state already fulfill that form, they do not have to be transformed.We used an online tool (Wolfram Alpha) to speed up the process.\newline
 
 \noindent Successor State:\newline
 \noindent \textbf{CapOn:}\newline
@@ -252,10 +252,11 @@ $
 (\neg InsertSim^{t} \vee \neg RemoveCap^{t}) \wedge (\neg InsertSim^{t} \vee \neg PutCapOn^{t})
 $\newline
 \newpage\noindent
-The next thing to to is replace the time-variables with concrete variables. In Order to do this we have to have an estimation of the length of the plan. With heuristics from the lecture we can assume a plan of length three. Also in the same time, we replaced the variable-names with numbers to fit the DIMACS format. We came up with this mapping:
+The next thing to to is replace the time-variables with concrete variables. In order to do this we have to have an estimation of the length of the plan. With heuristics from the lecture (i.e. level-sum) we can assume a plan of length three. Also at the same time, we replaced the variable-names with numbers to fit the DIMACS format. We came up with this mapping:
 \verbatiminput{mappingVars.txt}
-The last task is to write down all formulas in cnf form using the mapped values and solving them with a SATPLaner. We did just that (manually keeping the number of formulas down, by excluding redundant formulas) and got a result plan. The planer returned this set of literals that satisfies all the clauses:
-v 1 -2 -3 4 -5 -6 7 8 -9 -10 11 12 -13 -14 -15 16 -17 0 \newpage
+The last task is to write down all formulas in cnf form using the mapped values and solving them with a SATPLaner. We did just that (manually keeping the number of formulas down, by excluding redundant formulas) and got a result plan. The planer returned a set of literals that satisfies all the clauses.
+\newpage
+\noindent
 \textbf{Clauses in DIMACS:}
 \verbatiminput{input.txt}
 \newpage
