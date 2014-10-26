@@ -1,0 +1,22 @@
+This is MiniSat 2.0 beta
+============================[ Problem Statistics ]=============================
+| |
+| Number of variables: 17 |
+| Number of clauses: 55 |
+| Parsing time: 0.00 s |
+============================[ Search Statistics ]==============================
+| Conflicts | ORIGINAL | LEARNT | Progress |
+| | Vars Clauses Literals | Limit Clauses Lit/Cl | |
+===============================================================================
+| 0 | 9 24 55 | 8 0 nan | 0.000 % |
+===============================================================================
+Verified 24 original clauses.
+restarts : 1
+conflicts : 0 (0 /sec)
+decisions : 3 (0.00 % random) (3 /sec)
+propagations : 17 (17 /sec)
+conflict literals : 0 ( nan % deleted)
+CPU time : 1 s
+
+SATISFIABLE
+v 1 -2 -3 4 -5 -6 7 8 -9 -10 11 12 -13 -14 -15 16 -17 0

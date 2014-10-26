@@ -1,0 +1,17 @@
+CapOn0		1
+CapOn1		2
+CapOn2		3
+CapOn3		4
+SimIn0		5
+SimIn1		6
+SimIn2		7
+SimIn3		8
+PutCapOn0	9
+PutCapOn1	10
+PutCapOn2	11
+RemoveCap0	12
+RemoveCap1	13
+RemoveCap2	14
+InsertSim0	15
+InsertSim1	16
+InsertSim2	17
