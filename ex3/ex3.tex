@@ -1,0 +1,84 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{caption}
+
+\usepackage{algorithmicx}
+\usepackage{verbatim}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+\usepackage{graphicx}
+\usepackage{listings}
+
+\title{Exercisesheet No.3}
+\author{Alexander Diete \and Magnus M\"uller \and Martin Pfannem\"uller}
+
+\begin{document}
+\maketitle
+
+\section*{Ex.1}
+
+a) 52 \\
+\\
+b) $\frac{1}{52}$ \\
+\\
+c) $\frac{26}{52} = \frac{1}{2}$ \\
+
+\section*{Ex.2}
+
+a) $\binom{52}{5} = 2598960$ \\
+\\
+b) $\frac{1}{\binom{52}{5}} = \frac{1}{2598960}$ \\
+\\
+c) \\
+\\
+i) There are four Royal Straigth Flushes (Heart, Spades, Clubs, Diamonds). Thus, the answer is: $4 * \frac{1}{2598960}$ \\
+\\
+ii) There are 13 possibilities of a Four of a kind. Since one card does not matter, every remaining card is fine. $\frac{13*(52-4)}{2598960}$
+
+\section*{Ex.3}
+a)\\
+i) $P(\neg a) = P(\Omega \setminus a) = P(\Omega) - P(a) = 1 - P(a)$ \\
+ii) TODO:  $P(a \wedge \neg b) = P(a \cap (\Omega \setminus b))$ \\
+\\
+b) If a and b are disjoint then: $P(a \cup b) = P(a) + P(b) = \frac{1}{3} + \frac{5}{6} > 1$ This cannot be the case since $P(\Omega) = 1$. Thus, a and be are not disjoint. \\
+
+\section*{Ex.4}
+
+a)\\
+i) TODO: $P(a) = \frac{P(a \wedge \neg b)}{P(\neg b)} $\\
+ii) TODO\\
+\\
+b)\\
+\\
+i) At first Alice has the probability of $\frac{1}{2}$ to win. When Alice does not win, it is Rob's turn. When he loses (also with P = $\frac{1}{2}$), Alice has again the possiblity to win with $\frac{1}{2}$ resulting in $\frac{1}{2}+\frac{1}{2}*\frac{1}{2}*\frac{1}{2}$. The third step is that, Alice does not win in the first round, Rob does not win in his first try, Alice does not win on her second try, Rob does not win on his second try and Alice wins on her third try. This results in $\frac{1}{2}+\frac{1}{2}*\frac{1}{2}*\frac{1}{2}+\frac{1}{2}*\frac{1}{2}*\frac{1}{2}*\frac{1}{2}*\frac{1}{2}$. This goes on forever. This can be described with the following sum: $ \sum\nolimits_{i=0}^\infty(\frac{1}{2^{2i-1}})$. This sum converges to the probability P(AliceWins) = $\frac{2}{3}$ TODO: Wie ausrechen (gezogen von Wolfram Alpha).\\
+\\
+ii) P(head) =: p; P(AliceWins) = $p + (1-p) *(1-p) * p + (1-p) * (1-p) * (1-p) * (1-p) *p + \dots$ \\
+\\
+iii) On every flip the second person's probability to win is decreased by half compared to firsts. E.g. The first persons first flip has the probability of $\frac{1}{2}$ to win, the second person has the probability of $\frac{1}{2}*\frac{1}{2}$ to win. The same applies for the other flips. Thus, we would flip first.\\
+\\
+\section*{Ex.5}
+a) P(toothache)=$0.108+0.012+0.016+0.064=\frac{1}{5}$\\
+b) P(catch)=$0.108+0.016+0.072+0.144=0.34$\\
+c) P(cavity$|$catch)=$0.108+0.072=0.18$\\
+d) P(toothache $\vee$ catch) = $0.108+0.016+0.012+0.064+0.072+0.144=0.416\\
+$P(cavity$|$toothache $\vee$ catch)=$(0.108+0.012+0.072)/0.416=0.0.4615$\\
+
+\section*{Ex.6}
+
+Given:\\
+p: (virus) present\\
+r: recoqnized\\
+A: $P_A(r|p)=0.95; P_A(r|\neg p)=0.1$\\
+B: $P_B(r|p)=0.9; P_B(r|\neg p)=0.05$\\
+$P(p)=0.01$\\
+\\
+Alex warum falsch (siehe Lösungsbuch S. 117):\\
+$P_A(p|r)=\frac{P_A(r|p)*P_A(p)}{P_A(r)}=\frac{P_A(r|p)*P_A(p)}{P_A(r|\neg p)+P_A(r|p)}=\frac{0.95*0.01}{0.95+0.1}=0.0090$\\
+$P_B(p|r)=\frac{P_B(r|p)*P_B(p)}{P_B(r)}=\frac{P_B(r|p)*P_B(p)}{P_B(r|\neg p)+P_B(r|p)}=\frac{0.9*0.01}{0.9+0.05}=0.00947$\\
+
+\section*{Ex.7}
+
+Schau mal nach den AI Mitschrieben
+
+\end{document}
