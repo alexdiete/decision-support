@@ -146,8 +146,8 @@ $$
 \end{pmatrix} \cdot 0.63
 = 
 \begin{pmatrix}
-  0.60 & 0.59 \\
-  0.17 & 0.00063
+  0,5985 & 0,5922 \\
+  0,1827 & 0.00063
 \end{pmatrix} 
 $$
 $$
@@ -161,5 +161,99 @@ $$
   0.05 & 0.06 \\
   0.71 & 0.999
 \end{pmatrix} \cdot 0.0005
+$$
+$$
+=
+\begin{pmatrix}
+  0.000025 & 0.00003 \\
+  0.000355 & 0.0004995
+\end{pmatrix}
+$$
+$$
+f7(B,E) = 
+\begin{pmatrix}
+  0.5985 & 0.5922 \\
+  0.1827 & 0.00063
+\end{pmatrix}
++
+\begin{pmatrix}
+  0.000025 & 0.00003 \\
+  0.000355 & 0.0004995
+\end{pmatrix}
+=
+\begin{pmatrix}
+  0.598525 & 0.592226 \\
+  0.183055 & 0.0011295
+\end{pmatrix}
+$$
+In the next step we can combine f2 and f7 by summing out E. This factor will be called f8:
+$$
+f8(B) = f7(e, B) + f7(\neg e, B)
+$$
+$$
+f7(e, B) = 
+\begin{pmatrix}
+  0.598525 \\
+  0.183055 
+\end{pmatrix} \cdot 0.002
+=
+\begin{pmatrix}
+  0.00119705 \\
+  0.00036611 
+\end{pmatrix}
+$$
+$$
+f7(\neg e, B) = 
+\begin{pmatrix}
+  0.592226 \\
+  0.0011295 
+\end{pmatrix} \cdot 0.998
+=
+\begin{pmatrix}
+  0.591041548 \\
+  0.001127241 
+\end{pmatrix}
+$$
+$$
+f8(B) = 
+\begin{pmatrix}
+  0.00119705 \\
+  0.00036611 
+\end{pmatrix}
++
+\begin{pmatrix}
+  0.591041548 \\
+  0.001127241 
+\end{pmatrix}
+=
+\begin{pmatrix}
+  0.592238598 \\
+  0.001493351 
+\end{pmatrix}
+$$
+Finally we can combine f1 and f2:
+$$
+f9(B) = 
+\begin{pmatrix}
+  0.592238598 \cdot P(b) \\
+  0.001493351 \cdot P(\neg b)
+\end{pmatrix}
+= 
+\begin{pmatrix}
+  0.000592238598 \\
+  0.001491857649 
+\end{pmatrix}
+$$
+Now we only have to calculate $\alpha$ by dividing 1 by the sum of the probabilities of f9(B):
+$$
+\alpha = 1 \div (0.000592238598 + 0.001491857649) = 479.82428904
+$$
+By normalizing with $\alpha$ we get the final result:
+$$
+f(B) = \alpha \cdot f9(B) = 
+\begin{pmatrix}
+0.2841704642 \\
+0.7158295358
+\end{pmatrix}
 $$
 \end{document}
