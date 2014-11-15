@@ -18,11 +18,15 @@
 
 \section*{Ex.1}
 
-a) 52 \\
+a)
+In the card scenario an atomic event is the drawing of one specific card. As the deck consists of 52 cards we have 52 atomic events. \\
 \\
-b) $\frac{1}{52}$ \\
+b) The probability of drawing one specific card is 1 divided by the amount of cards, thus: 
+$$\frac{1}{52}$$ \\
 \\
-c) $\frac{26}{52} = \frac{1}{2}$ \\
+c)
+As there are as many black cards as there are red cards, 26 out of the total of 52 cards are black. Hence the probability is:
+$$\frac{26}{52} = \frac{1}{2}$$ \\
 
 \section*{Ex.2}
 
@@ -79,6 +83,83 @@ $P_B(p|r)=\frac{P_B(r|p)*P_B(p)}{P_B(r)}=\frac{P_B(r|p)*P_B(p)}{P_B(r|\neg p)+P_
 
 \section*{Ex.7}
 
-Schau mal nach den AI Mitschrieben
+First we setup the basic formula:
+$$P(B|j,m) = \alpha P(B) \cdot \sum_{e}P(e) \cdot \sum_{a}P(a|B,e) \cdot P(j|a) \cdot P(m|a)$$
+Afterwards the probabilities are replaces with factors:
+$$P(B|j,m) = \alpha f1(B) \times \sum_{e}f2(E) \times \sum_{a}f3(A,B,E) \times f4(A) \times f5(A)$$
+We can sum out f3, f4 and f5 as they all share A. First we combine f4 and f5 (and call it f6):
+$$ f4(A) = 
+\begin{pmatrix}
+  P(j|a) \\
+  P(j|\neg a)
+\end{pmatrix}
+ = 
+\begin{pmatrix}
+  0.9 \\
+  0.05
+\end{pmatrix}
+$$ 
+ 
+$$ f5(A) = 
+\begin{pmatrix}
+  P(m|a) \\
+  P(m|\neg a)
+\end{pmatrix}
+ = 
+\begin{pmatrix}
+  0.7 \\
+  0.01
+\end{pmatrix}
+$$ 
 
+$$ f6(A) = 
+\begin{pmatrix}
+  P(j|a)*P(m|a) \\
+  P(j|\neg a)*P(m|\neg a)
+\end{pmatrix}
+ = 
+\begin{pmatrix}
+  0.9 \cdot 0.7 \\
+  0.05 \cdot 0.01
+\end{pmatrix}
+ = 
+\begin{pmatrix}
+  0.63 \\
+  0.0005
+\end{pmatrix}
+$$ 
+Then we can sum out A in f3 and combine it with f6. We call this factor f7:
+$$
+  f7(B,E) = f3(a,B,E) * 0.63 + f3(\neg a,B,E) * 0.0005
+$$
+
+$$
+  f3(a,B,E) = 
+\begin{pmatrix}
+  P(a|b,e) & P(a|b,\neg e) \\
+  P(a|\neg b,e) & P(a|\neg b,\neg e)
+\end{pmatrix} \cdot 0.63
+=
+\begin{pmatrix}
+  0.95 & 0.94 \\
+  0.29 & 0.001
+\end{pmatrix} \cdot 0.63
+= 
+\begin{pmatrix}
+  0.60 & 0.59 \\
+  0.17 & 0.00063
+\end{pmatrix} 
+$$
+$$
+  f3(\neg a,B,E) = 
+\begin{pmatrix}
+  P(\neg a|b,e) & P(\neg a|b,\neg e) \\
+  P(\neg a|\neg b,e) & P(\neg a|\neg b,\neg e)
+\end{pmatrix} \cdot 0.0005
+=
+\begin{pmatrix}
+  0.05 & 0.06 \\
+  0.71 & 0.999
+\end{pmatrix} \cdot 0.0005
+$$
 \end{document}
