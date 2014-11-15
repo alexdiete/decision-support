@@ -42,7 +42,7 @@ ii) There are 13 possibilities of a Four of a kind. Since one card does not matt
 
 \section*{Ex.3}
 a)\\
-i) $P(\neg a) = P(\Omega \setminus a) = P(\Omega) - P(a) = 1 - P(a)$ \\
+i) $P(\neg a) = P(\Omega \setminus a) = P(\Omega) - P(a) = 1 - P(a)$ \\ \\
 ii) $P(a \wedge \neg b) = P(\Omega \setminus a) \cap P(\Omega \setminus \neg b)$ \\
 $ = P(a) \cap P(\neg b) = P(a) \cap (P(\Omega) - P(b)) = (P(\Omega) \cap P(a)) \setminus (P(a) \cap P(b))$ \\
 $= P(a) \setminus (P(a) \cap P(b)) = P(a) - P(a \wedge b)$ \\
@@ -80,15 +80,25 @@ $P(cavity$|$toothache $\vee$ catch)=$(0.108+0.012+0.072)/0.416=0.0.4615$\\
 \section*{Ex.6}
 
 Given:\\
-p: (virus) present\\
-r: recoqnized\\
-A: $P_A(r|p)=0.95; P_A(r|\neg p)=0.1$\\
-B: $P_B(r|p)=0.9; P_B(r|\neg p)=0.05$\\
-$P(p)=0.01$\\
+v: (virus) present\\
+p: prognosis\\
+A: $P_A(p|v)=0.95; P_A(p|\neg v)=0.1$\\
+B: $P_B(p|v)=0.9; P_B(p|\neg v)=0.05$\\
+$P(v)=0.01$\\
 \\
-Alex warum falsch (siehe Lösungsbuch S. 117):\\
-$P_A(p|r)=\frac{P_A(r|p)*P_A(p)}{P_A(r)}=\frac{P_A(r|p)*P_A(p)}{P_A(r|\neg p)+P_A(r|p)}=\frac{0.95*0.01}{0.95+0.1}=0.0090$\\
-$P_B(p|r)=\frac{P_B(r|p)*P_B(p)}{P_B(r)}=\frac{P_B(r|p)*P_B(p)}{P_B(r|\neg p)+P_B(r|p)}=\frac{0.9*0.01}{0.9+0.05}=0.00947$\\
+We can use Bayes Theorem to transform the conditional probability: \\
+$$P_A(p|v)=\frac{P_A(v|p)*P_A(p)}{P(v)}$$ \\
+We need to calculate $P_A(r)$. We can do this by enumeration: \\
+$$P_A(p) = P_A(p|v) \cdot P(v) + P_A(p|\neg v) \cdot P(\neg v) = 0.1085$$ \\
+Thus we can transform the formula above to determine  $P(v|p)$: \\
+$$P_A(v|p) = \frac{P_A(p|v) \cdot P(v)}{P_A(p)} = \frac{0.95 \cdot 0.01}{0.1085} = 0.08755760369 $$
+
+The same approach can be done with procedure B:
+$$P_B(p) = P_B(p|v) \cdot P(v) + P_B(p|\neg v) \cdot P(\neg v) = 0.0585 $$
+$$P_B(v|p) = \frac{P_B(p|v) \cdot P(v)}{P_B(p)} = \frac{0.9 \cdot 0.01}{0.0585} = 0.1538461538$$
+
+\noindent
+Test B is more indicative as the probability of having the virus given a positive result is nearly 2 times the probability of test A.
 
 \section*{Ex.7}
 
