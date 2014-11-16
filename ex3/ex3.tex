@@ -58,7 +58,7 @@ $ = P(a) - P(a) \cdot P(b) = P(a) \cdot (1 - P(b)) = P(a) \cdot P(\neg b)$ \newl
 \newline
 
 ii) $P(\neg a \wedge \neg b) = P(\neg b \wedge \neg a) = P(\neg b) - P(a \wedge \neg b)$ \\
-As we already proved Ex.4 a)i) we can know that $P(a)$ and $P(\neg b)$ are independent and can substitute them in the formula: \\
+As we already proved Ex.4 a)i) we know that $P(a)$ and $P(\neg b)$ are independent and we can substitute them in the formula: \\
 $= P(\neg b) - P(a) \cdot P(\neg b) = P(\neg b) \cdot (1 - P(a)) = P(\neg b) \cdot P(\neg a)$
 \\ \\
 \noindent
@@ -66,9 +66,9 @@ b)\\
 \\
 i) At first Alice has the probability of $\frac{1}{2}$ to win. When Alice does not win, it is Rob's turn. When he loses (also with P = $\frac{1}{2}$), Alice has again the possiblity to win with $\frac{1}{2}$ resulting in $\frac{1}{2}+\frac{1}{2}*\frac{1}{2}*\frac{1}{2}$. The third step is that, Alice does not win in the first round, Rob does not win in his first try, Alice does not win on her second try, Rob does not win on his second try and Alice wins on her third try. This results in $\frac{1}{2}+\frac{1}{2}*\frac{1}{2}*\frac{1}{2}+\frac{1}{2}*\frac{1}{2}*\frac{1}{2}*\frac{1}{2}*\frac{1}{2}$. This goes on forever. This can be described with the following sum: $ \sum\nolimits_{i=0}^\infty(\frac{1}{2^{2i+1}})$. This sum converges to the probability P(AliceWins) = $\frac{2}{3}$ - shown as follows by making use of the geometric series: $ \sum\nolimits_{i=0}^\infty\frac{1}{2^{2i+1}} = \sum\nolimits_{i=0}^\infty\frac{1}{2^{2i}*2} = \sum\nolimits_{i=0}^\infty\frac{1}{2}\frac{1}{4^{i}} = \sum\nolimits_{i=0}^\infty\frac{1}{2}(\frac{1}{4})^{i} = \frac{\frac{1}{2}}{1-\frac{1}{4}} = \frac{\frac{1}{2}}{\frac{3}{4}} = \frac{4}{6} = \frac{2}{3}$\\
 \\
-ii) P(head) =: p; P(AliceWins) = $p + (1-p) *(1-p) * p + (1-p) * (1-p) * (1-p) * (1-p) *p + \dots$ \\
+ii) P(head) =: p; P(AliceWins) = $p + (1-p) *(1-p) * p + (1-p) * (1-p) * (1-p) * (1-p) *p + \dots$ We can express this by the following formula: $\sum\nolimits_{i=0}^\infty p*(1-p)^{2i} = \frac{p}{1-(1-p)^{2}} = \frac{p}{1-(1-2p+p^{2})} = \frac{p}{2p-p^{2}} = \frac{1}{2-p}$ The first equation is by the geometric series as $(1-p)^{2i}$ is smaller than 1 for any $p \in (0,1]$. The second equation is by the binomial theorem.\\
 \\
-iii) On every flip the second person's probability to win is decreased by half compared to firsts. E.g. The first persons first flip has the probability of $\frac{1}{2}$ to win, the second person has the probability of $\frac{1}{2}*\frac{1}{2}$ to win. The same applies for the other flips. Thus, we would flip first.\\
+iii) Since it holds that $P(FirstWins) = \frac{1}{2-p}$, where $p \in (0,1]$ it follows that $P(FirstWins)\in (\frac{1}{2},1]$ and by the rules of the game $P(SecondWins)=1-P(FirstWins)\in[0,\frac{1}{2})$.  To put it in other words, the chance to win if we flip first is greater than the chance to win if we flip second for every $p \in (0,1]$. Thus we would flip first.
 \\
 \section*{Ex.5}
 a) P(toothache)=$0.108+0.012+0.016+0.064=\frac{1}{5}$\\
