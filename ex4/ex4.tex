@@ -33,10 +33,29 @@ $$\frac{P(strawberry | red, round)}{P(strawberry | red, round) + P(anchovy | red
 $$\frac{0.7 \cdot 0.8 \cdot 0.8}{0.7 \cdot 0.8 \cdot 0.8 + 0.3 \cdot 0.1 \cdot 0.1} = \frac{0.448}{0.451} \approx 0.993$$ \\
 
 \section*{Ex.2}
-%TODO
-
+Given the following probabilities and their payoffs:\\
+\begin{tabular}{|l|c|c|}
+\hline
+    A & 80\% & \$4000 \\
+    \hline
+    B & 100\% & \$3000 \\
+    \hline
+    C & 20\% & \$4000 \\
+    \hline
+    D & 25\% & \$3000 \\
+    \hline
+\end{tabular}
+\\
+It follows by decomposability that: $C\sim[25\%,A; 75\%,0]$ and $D\sim[25\%,B;75\%,0]$. \\
+By substitutability that: if $D \prec C$ then we $B \prec A$ would have to hold. This leads to a contradiction with respect to the assumption $D \prec C$ and $A \prec B$.
 \section*{Ex.3}
-a) %TODO 
+a) \\
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.7\textwidth]{DecisionNetwork}
+	\caption{Ex.3a}
+	\label{fig:3}
+\end{figure}
 \\
 b) Utility of buying the book: \\ \\
 $(P(p|b,m) \cdot P(m|b) + P(p|b\neg m) \cdot P(\neg m|b)) \cdot (2000-100)\$ + $
